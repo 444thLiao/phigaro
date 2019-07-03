@@ -40,9 +40,10 @@ class PreprocessTask(AbstractTask):
             print(
                 'Error! Your fasta file contains at least one sequence length < 20000.  The short sequences are: ')
             print('\n'.join(sequences_to_delete))
-            if not get_users_answer('Do you want to start Phigaro without these sequences?'):
-                self.clean()
-                exit(1)
+            self.clean()
+#            if not get_users_answer('Do you want to start Phigaro without these sequences?'):
+#                self.clean()
+#                exit(1)
 
     def output(self):
         return self.file('{}.fasta'.format(self.sample))
