@@ -102,7 +102,7 @@ class SetupHelper(object):
         try:
             return [
                 s.rstrip()
-                for s in sh.locate(*args, **kwargs)
+                for s in sh.find(*args, **kwargs)
             ]
         except sh.ErrorReturnCode_1:
             return []
